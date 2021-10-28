@@ -1,0 +1,45 @@
+.popup{
+position: absolute;
+top: 100%;
+width: 330px;
+padding: 10px;
+margin-top: 10px;
+background: #fff;
+box-shadow: #486270 0px 2px 4px 0px;
+@media (max-width:992px) {
+  position: unset;
+  box-shadow: none;
+  width: auto;
+}
+   .btn-group {
+        padding-top: 20px;
+        margin-left: auto;
+        margin-top: 10px;
+        display: block;
+        text-align: right;
+        .apply,
+        .cancel {
+          padding: 8px 16px;
+          border-color: transparent;
+          border-radius: 2em;
+          border-image: initial;
+          background: #cbf3dd;
+          transition: background-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1)
+              0s,
+            border-color, box-shadow, color;
+          font-size: 16px;
+          line-height: 22px;
+          color: #7cde9b;
+          font-family: inherit;
+          font-weight: normal;
+          text-transform: none;
+          letter-spacing: normal;
+          word-spacing: normal;
+          text-align: center;
+        }
+        .cancel {
+          background: transparent;
+          color: rgb(15, 29, 14);
+        }
+      }
+}
