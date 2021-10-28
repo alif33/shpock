@@ -1,0 +1,261 @@
+.users {
+  .sidebar {
+    padding: 20px;
+    border: 1px solid rgb(222, 225, 222);
+    border-radius: 12px;
+    background-color: #fff;
+    margin-top: 60px;
+    @media (max-width:767px) {
+      margin-top: 30px;
+    }
+    .profile-image {
+      img {
+        height: 48px;
+        width: 48px;
+        border-radius: 50%;
+      }
+    }
+    .reviews {
+      ul {
+        li {
+          list-style: none;
+          svg {
+            height: 20px;
+            width: 20px;
+          }
+        }
+      }
+    }
+    h3 {
+      margin-top: 16px;
+      overflow-wrap: break-word;
+      max-width: 100%;
+      font-weight: bold;
+      word-break: break-word;
+      text-align: center;
+      font-size: 22px;
+      line-height: 32px;
+      margin-bottom: 0px;
+    }
+    .information {
+      margin-top: 20px;
+      ul {
+        display: flex;
+        justify-content: space-between;
+        li {
+          list-style: none;
+          margin-right: 20px;
+          padding-right: 20px;
+          border-right: 1px solid rgb(222, 225, 222);
+          h6 {
+            color: rgb(15, 29, 14);
+            font-weight: bold;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            text-align: center;
+            font-size: 16px;
+            line-height: 22px;
+            margin: 0;
+          }
+          p {
+            color: rgb(93, 104, 93);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            text-align: center;
+            font-size: 12px;
+            line-height: 18px;
+            margin: 0;
+          }
+        }
+        .followers,
+        .following {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+  .profile-nav {
+    border-bottom: 1px solid rgb(222, 225, 222);
+    @media (max-width:767px) {
+     padding-top: 20px;
+    }
+    li {
+      margin-right: 20px;
+      a {
+        font-family: inherit;
+        font-size: inherit;
+        line-height: inherit;
+        font-weight: normal;
+        text-transform: none;
+        text-align: center;
+        vertical-align: baseline;
+        user-select: none;
+        border-top-width: initial;
+        border-right-width: initial;
+        border-left-width: initial;
+        border-top-color: initial;
+        border-right-color: initial;
+        border-left-color: initial;
+        color: rgb(15, 29, 14);
+        cursor: pointer;
+        white-space: nowrap;
+        display: inline-flex;
+        -webkit-box-align: center;
+        align-items: center;
+        margin: 0px;
+        padding: 0px 0px 8px;
+        overflow: visible;
+        border-style: none none solid;
+        border-image: initial;
+        background: none;
+        border-bottom: 3px solid transparent;
+        outline: none;
+        transition: background-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1)
+            0s,
+          border-color, box-shadow, color;
+        text-decoration: none;
+        &.active {
+          text-shadow: currentcolor -0.03ex 0px, currentcolor 0.03ex 0px;
+          // text-decoration: none;
+          border-bottom: 3px solid rgb(60, 206, 105);
+        }
+      }
+    }
+  }
+  .links-item {
+    display: none;
+    margin-top: 20px;
+    // position: absolute;
+    li {
+      list-style: none;
+      margin-right: 10px;
+      > svg {
+        height: 32px;
+        width: 32px;
+      }
+      button {
+        svg {
+          height: 16px;
+          width: 16px;
+        }
+        font-family: inherit;
+        font-weight: normal;
+        text-transform: none;
+        text-align: center;
+        vertical-align: baseline;
+        white-space: nowrap;
+        user-select: none;
+        cursor: pointer;
+        color: rgb(226, 232, 235);
+        font-size: 14px;
+        line-height: 20px;
+        min-height: 28px;
+        width: auto;
+        display: inline-flex;
+        -webkit-box-flex: 0;
+        flex-grow: 0;
+        -webkit-box-pack: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        align-items: center;
+        appearance: button;
+        margin: 0px;
+        overflow: visible;
+        text-decoration: none;
+        transition: background-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1)
+            0s,
+          border-color, box-shadow, color;
+        background: transparent;
+        border-width: 1px;
+        border-style: solid;
+        border-color: rgb(226, 232, 235);
+        border-image: initial;
+        border-radius: 2em;
+        padding: 4px 8px;
+      }
+    }
+  }
+  .open-links {
+    display: flex;
+  }
+  .joined {
+    display: inline-block;
+    margin-top: 20px;
+    color: rgb(93, 104, 93);
+    font-size: 12px;
+    line-height: 18px;
+  }
+  .share-edit {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    justify-content: space-around;
+    button {
+      font-family: inherit;
+      text-transform: none;
+      text-align: center;
+      vertical-align: baseline;
+      white-space: nowrap;
+      user-select: none;
+      cursor: pointer;
+      color: rgb(15, 29, 14);
+      font-weight: bold;
+      font-size: 14px;
+      line-height: 20px;
+      min-height: 28px;
+      width: 100%;
+      display: flex;
+      -webkit-box-flex: 1;
+      flex-grow: 1;
+      -webkit-box-pack: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      align-items: center;
+      appearance: button;
+      margin: 0px;
+      overflow: visible;
+      text-decoration: none;
+      border-width: initial;
+      border-style: none;
+      border-image: initial;
+      background: none rgb(234, 236, 234);
+      transition: background-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1) 0s,
+        border-color, box-shadow, color;
+      border-color: rgb(234, 236, 234);
+      padding: 9px 40px;
+      border-radius: 2em;
+    }
+  }
+  .informations {
+    border-top: 1px solid rgb(222, 225, 222);
+    padding: 16px 0 16px 0;
+    text-align: left;
+    ul {
+      padding: 0;
+      li {
+        list-style: none;
+        color: rgb(15, 29, 14);
+        text-align: inherit;
+        font-size: inherit;
+        line-height: inherit;
+        font-weight: bold;
+        svg {
+          height: 16px;
+          width: 16px;
+          margin-right: 8px;
+        }
+      }
+    }
+  }
+  .terms {
+    padding-top: 16px;
+    text-align: left;
+    color: rgb(15, 29, 14);
+    font-size: inherit;
+    line-height: inherit;
+    font-weight: bold;
+    border-top: 1px solid rgb(222, 225, 222);
+  }
+}

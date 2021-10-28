@@ -7,12 +7,40 @@
         "watch-poll": "mix watch -- --watch-options-poll=1000",
         "hot": "mix watch --hot",
         "prod": "npm run production",
-        "production": "mix --production"
+        "production": "mix --production",
+        "s": "php artisan serve",
+        "mr": "php artisan migrate",
+        "seed": "php artisan db:seed",
+        "rb": "php artisan migrate:rollback --step=10",
+        "make": "php artisan make:model Category -cfms",
+        "next": ""
     },
     "devDependencies": {
+        "@babel/preset-react": "^7.14.5",
         "axios": "^0.21",
         "laravel-mix": "^6.0.6",
         "lodash": "^4.17.19",
         "postcss": "^8.1.14"
+    },
+    "dependencies": {
+        "@fortawesome/fontawesome-free-solid": "^5.0.13",
+        "@fortawesome/fontawesome-svg-core": "^1.2.36",
+        "@fortawesome/react-fontawesome": "^0.1.15",
+        "@testing-library/jest-dom": "^5.11.4",
+        "@testing-library/react": "^11.1.0",
+        "@testing-library/user-event": "^12.1.10",
+        "bootstrap": "^5.1.0",
+        "classnames": "^2.3.1",
+        "node-sass": "4.14.1",
+        "react": "^17.0.2",
+        "react-custom-radio-checkbox": "^1.0.2",
+        "react-dom": "^17.0.2",
+        "react-multilevel-sidebar": "^1.0.4",
+        "react-router-dom": "^5.2.0",
+        "react-scripts": "4.0.3",
+        "react-slick": "^0.28.1",
+        "reactstrap": "^8.9.0",
+        "slick-carousel": "^1.8.1",
+        "web-vitals": "^1.0.1"
     }
 }
