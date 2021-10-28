@@ -2,22 +2,20 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Category;
+use App\Models\SubCategory;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
-class CategoryController extends Controller
-{   
-
+class SubCategoryController extends Controller
+{
     public function __construct()
     {
-        $this->middleware('auth:admin', ['except' => ['index']]);
+        $this->middleware('auth:admin', ['except' => ['show']]);
     }
-
 
     public function index()
     {
-        return Category::all();
+        return SubCategory::all();
     }
 
     public function store(Request $request)
@@ -25,7 +23,9 @@ class CategoryController extends Controller
         $validator = Validator::make(
             $request->all(),
             [
-                'category_name' => 'required|string|between:2,30|unique:categories',
+                'subcategory_name' => 'required|string|between:2,30|unique:subcategories',
+                'subcategory_icon' => 'required|string|between:2,500',
+                'category_id' => 'required',
             ]
         );
 
@@ -36,7 +36,7 @@ class CategoryController extends Controller
             );
         }
 
-        $category = Category::create(
+        $category = SubCategory::create(
             array_merge(
                 $validator->validated()
             )
@@ -48,7 +48,9 @@ class CategoryController extends Controller
         $validator = Validator::make(
             $request->all(),
             [
-                'category_name' => 'required|string|between:2,30|unique:categories',
+                'subcategory_name' => 'required|string|between:2,30|unique:subcategories',
+                'subcategory_icon' => 'required|string|between:2,500',
+                'category_id' => 'required',
             ]
         );
 
@@ -59,7 +61,7 @@ class CategoryController extends Controller
             );
         }
 
-        $category = Category::findOrFail($id)->update(
+        $category = SubCategory::findOrFail($id)->update(
             array_merge(
                 $validator->validated()
             )
@@ -68,16 +70,15 @@ class CategoryController extends Controller
     
     public function destory($id)
     {
-       $category = Category::findOrFail($id);
+       $category = SubCategory::findOrFail($id);
 
        if($category)
        {
            $category->delete();
            return response()->json(
-                ['message'=>'Category deleted successfully'],
+                ['message'=>'SubCategory deleted successfully'],
                 422
             );
        } 
     }
-
 }

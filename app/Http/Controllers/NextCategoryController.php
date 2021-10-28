@@ -2,22 +2,20 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Category;
+use App\Models\NextCategory;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
-class CategoryController extends Controller
-{   
-
+class NextCategoryController extends Controller
+{
     public function __construct()
     {
-        $this->middleware('auth:admin', ['except' => ['index']]);
+        $this->middleware('auth:admin', ['except' => ['show']]);
     }
-
 
     public function index()
     {
-        return Category::all();
+        return NextCategory::all();
     }
 
     public function store(Request $request)
@@ -25,7 +23,10 @@ class CategoryController extends Controller
         $validator = Validator::make(
             $request->all(),
             [
-                'category_name' => 'required|string|between:2,30|unique:categories',
+                'nextcategory_name' => 'required|string|between:2,30|unique:nextcategories',
+                'nextcategory_icon' => 'required|string|between:2,500',
+                'category_id' => 'required',
+                'subcategory_id' => 'required',
             ]
         );
 
@@ -36,7 +37,7 @@ class CategoryController extends Controller
             );
         }
 
-        $category = Category::create(
+        $category = NextCategory::create(
             array_merge(
                 $validator->validated()
             )
@@ -48,7 +49,10 @@ class CategoryController extends Controller
         $validator = Validator::make(
             $request->all(),
             [
-                'category_name' => 'required|string|between:2,30|unique:categories',
+                'nextcategory_name' => 'required|string|between:2,30',
+                'nextcategory_icon' => 'required|string|between:2,500',
+                'category_id' => 'required',
+                'subcategory_id' => 'required',
             ]
         );
 
@@ -59,7 +63,7 @@ class CategoryController extends Controller
             );
         }
 
-        $category = Category::findOrFail($id)->update(
+        $category = NextCategory::findOrFail($id)->update(
             array_merge(
                 $validator->validated()
             )
@@ -68,7 +72,7 @@ class CategoryController extends Controller
     
     public function destory($id)
     {
-       $category = Category::findOrFail($id);
+       $category = NextCategory::findOrFail($id);
 
        if($category)
        {
@@ -79,5 +83,4 @@ class CategoryController extends Controller
             );
        } 
     }
-
 }
