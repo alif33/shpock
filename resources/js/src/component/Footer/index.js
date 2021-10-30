@@ -1,8 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Container, Col, Row } from 'reactstrap';
-// import logo from '../../assets/img/main.png'
-// import { a } from 'react-router-dom';
 
 const Footer = () => {
   const data = [
@@ -98,9 +96,9 @@ const Footer = () => {
                   d='M2 5l6 6 6-6'
                   stroke='currentColor'
                   fill='none'
-                  fill-rule='evenodd'
-                  stroke-linecap='round'
-                  stroke-linejoin='round'
+                  fillRule='evenodd'
+                  strokeLinecap='round'
+                  strokeLinejoin='round'
                 ></path>
               </svg>
             </button>

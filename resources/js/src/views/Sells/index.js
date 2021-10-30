@@ -43,12 +43,12 @@ const Sells = () => {
                         >
                           <g
                             fill='none'
-                            fill-rule='evenodd'
+                            fillRule='evenodd'
                             transform='translate(0 4)'
                           >
                             <path
                               stroke='currentColor'
-                              stroke-width='1.5'
+                              strokeWidth='1.5'
                               d='M38.328 31.434c.658 0 1.262-.348 1.596-.923a1.818 1.818 0 0 0 .061-1.761L29.211 7.784a1.84 1.84 0 0 0-1.473-1.025c-.635-.062-1.258.212-1.607.669l-7.255 11.529-.662-.779-4.814-5.663a1.836 1.836 0 0 0-1.543-.585c-.58.06-1.096.39-1.394.892L.995 28.696a1.815 1.815 0 0 0 .003 1.825c.326.565.932.913 1.588.913h35.742z'
                             ></path>
                             <circle
@@ -56,13 +56,13 @@ const Sells = () => {
                               cy='3.5'
                               r='2.75'
                               stroke='currentColor'
-                              stroke-width='1.5'
+                              strokeWidth='1.5'
                             ></circle>
                             <path
                               fill='#FFF'
-                              fill-rule='nonzero'
+                              fillRule='nonzero'
                               stroke='currentColor'
-                              stroke-width='1.5'
+                              strokeWidth='1.5'
                               d='M36.5 17.75c-5.936 0-10.75 4.814-10.75 10.75s4.814 10.75 10.75 10.75 10.75-4.814 10.75-10.75-4.814-10.75-10.75-10.75z'
                             ></path>
                             <path
@@ -123,7 +123,7 @@ const Sells = () => {
                 <Label for="exampleSelect">Your product will be listed here</Label>
                 <div className='select d-flex align-items-center justify-content-between border p-2 w-50' onClick={()=> setModal(!modal)}>
                   Choose a category
-                  <svg style={{height:'16px',width:'16px'}} viewBox="0 0 16 16" class="SVG__IconSVG-sc-741qml-0 kHWUOM"><path d="M4,4L12,4L8,8Z" fill="currentColor" stroke="currentColor" stroke-width="1px" strokeLinecap="butt"></path></svg>
+                  <svg style={{height:'16px',width:'16px'}} viewBox="0 0 16 16" class="SVG__IconSVG-sc-741qml-0 kHWUOM"><path d="M4,4L12,4L8,8Z" fill="currentColor" stroke="currentColor" strokeWidth="1px" strokeLinecap="butt"></path></svg>
                 </div>
                  <ModalRight modal={modal} setModal={setModal}>
                    <Category />
@@ -155,7 +155,7 @@ const Sells = () => {
                           <path
                             d='M17.751 18.392l4.05 4.355a.752.752 0 0 1-.028 1.05.719.719 0 0 1-1.03-.029l-4.111-4.422a10.306 10.306 0 0 1-6.147 2.027C4.695 21.373 0 16.59 0 10.687S4.694 0 10.485 0c5.791 0 10.486 4.785 10.486 10.687 0 3.027-1.235 5.76-3.22 7.705zm-7.266 1.497c4.987 0 9.03-4.12 9.03-9.202 0-5.083-4.043-9.203-9.03-9.203-4.986 0-9.029 4.12-9.029 9.203 0 5.082 4.043 9.202 9.03 9.202z'
                             fill='currentColor'
-                            fill-rule='nonzero'
+                            fillRule='nonzero'
                           ></path>
                         </svg>
                       </Button>

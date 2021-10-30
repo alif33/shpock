@@ -16,7 +16,7 @@ const Seller = (props) => {
                 id='a'
               ></path>
             </defs>
-            <g fill='none' fill-rule='evenodd'>
+            <g fill='none' fillRule='evenodd'>
               <ellipse
                 fill-opacity='.059'
                 fill='#000'
@@ -29,26 +29,26 @@ const Seller = (props) => {
                 <mask id='b' fill='#fff'>
                   <use></use>
                 </mask>
-                <use fill='#CECECE' fill-rule='nonzero'></use>
+                <use fill='#CECECE' fillRule='nonzero'></use>
                 <path
                   d='M74.683 110.697L39.66 130.52a5 5 0 0 1-7.304-5.602L42.57 85.415 13.372 57.069a5 5 0 0 1 2.767-8.536l40.367-5.842C64.024 12.348 71.541-2.824 79.058-2.824c7.517 0 15.034 15.172 22.551 45.515l40.368 5.842a5 5 0 0 1 2.767 8.536l-29.197 28.346c4.005 32.679 2.89 48.515-3.346 47.507-6.235-1.008-18.741-8.417-37.518-22.225z'
                   fill='#D9D9D9'
-                  fill-rule='nonzero'
+                  fillRule='nonzero'
                   mask='url(#b)'
                 ></path>
                 <g
                   stroke='#727272'
                   mask='url(#b)'
-                  stroke-linecap='round'
-                  stroke-linejoin='round'
+                  strokeLinecap='round'
+                  strokeLinejoin='round'
                 >
                   <path
                     d='M83.563 86.61c-6.709-8.605-18.136-3.685-19.635 0'
-                    stroke-width='3.125'
+                    strokeWidth='3.125'
                   ></path>
                   <path
                     d='M54.766 68.283c4.269 1.893 7.75 1.196 10.352-2.39M81.498 65.893c3.007 3.573 6.441 4.472 10.352 2.39'
-                    stroke-width='3.75'
+                    strokeWidth='3.75'
                   ></path>
                 </g>
               </g>
@@ -59,33 +59,33 @@ const Seller = (props) => {
               >
                 <path
                   d='M25.795 5.315h4.367a.874.874 0 0 1 0 1.75h-4.367v4.47a.874.874 0 1 1-1.746 0v-4.47h-4.367a.874.874 0 0 1 0-1.75h4.367V.875a.874.874 0 1 1 1.746 0v4.44z'
-                  stroke-width='1.178'
+                  strokeWidth='1.178'
                   fill='#A6A6A6'
                   opacity='.574'
-                  stroke-linecap='round'
+                  strokeLinecap='round'
                 ></path>
                 <path
                   d='M186.766 24.3h4.367a.874.874 0 0 1 0 1.75h-4.367v4.47a.874.874 0 1 1-1.746 0v-4.47h-4.366a.874.874 0 0 1 0-1.75h4.366v-4.44a.874.874 0 1 1 1.746 0v4.44z'
-                  stroke-width='1.178'
+                  strokeWidth='1.178'
                   fill='#A6A6A6'
-                  stroke-linecap='round'
+                  strokeLinecap='round'
                 ></path>
                 <path
                   d='M26.72 74.112h4.366a.874.874 0 0 1 0 1.75H26.72v4.47a.874.874 0 1 1-1.747 0v-4.47h-4.366a.874.874 0 0 1 0-1.75h4.366v-4.44a.874.874 0 1 1 1.747 0v4.44z'
-                  stroke-width='1.178'
+                  strokeWidth='1.178'
                   fill='#A6A6A6'
                   opacity='.289'
-                  stroke-linecap='round'
+                  strokeLinecap='round'
                 ></path>
                 <ellipse
-                  stroke-width='2.356'
+                  strokeWidth='2.356'
                   cx='154.716'
                   cy='4.569'
                   rx='3.493'
                   ry='3.5'
                 ></ellipse>
                 <ellipse
-                  stroke-width='2.356'
+                  strokeWidth='2.356'
                   opacity='.401'
                   cx='179.791'
                   cy='68.739'
@@ -93,7 +93,7 @@ const Seller = (props) => {
                   ry='3.5'
                 ></ellipse>
                 <ellipse
-                  stroke-width='2.356'
+                  strokeWidth='2.356'
                   cx='3.493'
                   cy='38.439'
                   rx='3.493'

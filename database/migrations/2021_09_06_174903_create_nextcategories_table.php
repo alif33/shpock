@@ -17,6 +17,7 @@ class CreateNextcategoriesTable extends Migration
             $table->id();
             $table->string('nextcategory_name')->unique();
             $table->text('nextcategory_icon')->nullable();
+            $table->text('nextcategory_image')->nullable();
             $table->bigInteger('category_id')->unsigned();
             $table->bigInteger('subcategory_id')->unsigned();
             $table->timestamps();

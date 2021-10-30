@@ -1,10 +1,16 @@
 import React, { useState } from 'react';
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
+import { useSelector, useDispatch } from 'react-redux';
+import { signin } from '../../redux/actions/userActions';
 
 const Authentication = ({ login = false }) => {
   const [signup, setLogin] = useState(login);
   const [forgoPassword, setForgoPassword] = useState(false);
+  const dispatch = useDispatch();
 
+  const LoginHandler = ()=>{
+    dispatch(signin('alifhasan332@', 'password'));
+  }
   const backtologin = () => {
     setLogin(false);
     setForgoPassword(false);
@@ -45,7 +51,7 @@ const Authentication = ({ login = false }) => {
           <div className='button-groups'>
             <Button>
               <svg viewBox='0 0 24 24' class='SVG__IconSVG-sc-741qml-0 jmSzln'>
-                <g fill='none' fill-rule='evenodd'>
+                <g fill='none' fillRule='evenodd'>
                   <path
                     fill='#EA4335'
                     d='M12 4.64c2.25 0 3.77.97 4.64 1.79l3.39-3.31A11.53 11.53 0 0012 0 12 12 0 001.28 6.61l3.88 3.02A7.25 7.25 0 0112 4.64z'
@@ -69,11 +75,11 @@ const Authentication = ({ login = false }) => {
             </Button>
             <Button className='btnapple'>
               <svg viewBox='0 0 24 24' class='SVG__IconSVG-sc-741qml-0 jmSzln'>
-                <g fill='none' fill-rule='evenodd'>
+                <g fill='none' fillRule='evenodd'>
                   <path
                     d='M12.23 6.74c.88 0 1.99-.6 2.65-1.38a4.4 4.4 0 001.03-2.72c0-.14-.02-.27-.04-.38-.98.03-2.16.65-2.87 1.48a4.18 4.18 0 00-1.07 2.63c0 .15.03.3.04.35l.26.02zM9.13 21.7c1.2 0 1.73-.8 3.24-.8 1.52 0 1.86.78 3.2.78 1.32 0 2.2-1.21 3.03-2.4.93-1.36 1.32-2.7 1.34-2.75a4.27 4.27 0 01-2.6-3.93c0-2.5 1.98-3.62 2.1-3.71a4.6 4.6 0 00-3.87-1.93c-1.48 0-2.68.9-3.44.9-.82 0-1.9-.85-3.18-.85-2.44 0-4.9 2-4.9 5.78 0 2.35.91 4.83 2.04 6.44.97 1.36 1.82 2.47 3.03 2.47z'
                     fill='currentColor'
-                    fill-rule='nonzero'
+                    fillRule='nonzero'
                   ></path>
                 </g>
               </svg>
@@ -81,7 +87,7 @@ const Authentication = ({ login = false }) => {
             </Button>
             <Button className='btnfb'>
               <svg viewBox='0 0 24 24' class='SVG__IconSVG-sc-741qml-0 jmSzln'>
-                <g transform='translate(2 2)' fill='none' fill-rule='evenodd'>
+                <g transform='translate(2 2)' fill='none' fillRule='evenodd'>
                   <path
                     d='M20 10.06C20 4.5 15.52 0 10 0S0 4.5 0 10.06c0 5.02 3.66 9.19 8.44 9.94v-7.03H5.9v-2.9h2.54V7.83c0-2.52 1.49-3.91 3.77-3.91 1.1 0 2.24.2 2.24.2V6.6H13.2c-1.24 0-1.63.78-1.63 1.57v1.9h2.78l-.45 2.9h-2.33V20A10.05 10.05 0 0020 10.06'
                     fill='currentColor'
@@ -122,7 +128,7 @@ const Authentication = ({ login = false }) => {
                     Remember me
                   </Label>
                 </FormGroup>
-                <Button disabled> Log In</Button>
+                <Button onClick={LoginHandler}> Log In</Button>
               </Form>
               <p
                 className='forgot-password'
@@ -137,7 +143,7 @@ const Authentication = ({ login = false }) => {
                   viewBox='0 0 24 24'
                   class='SVG__IconSVG-sc-741qml-0 jmSzln'
                 >
-                  <g fill='none' fill-rule='evenodd'>
+                  <g fill='none' fillRule='evenodd'>
                     <path
                       fill='#EA4335'
                       d='M12 4.64c2.25 0 3.77.97 4.64 1.79l3.39-3.31A11.53 11.53 0 0012 0 12 12 0 001.28 6.61l3.88 3.02A7.25 7.25 0 0112 4.64z'
@@ -164,11 +170,11 @@ const Authentication = ({ login = false }) => {
                   viewBox='0 0 24 24'
                   class='SVG__IconSVG-sc-741qml-0 jmSzln'
                 >
-                  <g fill='none' fill-rule='evenodd'>
+                  <g fill='none' fillRule='evenodd'>
                     <path
                       d='M12.23 6.74c.88 0 1.99-.6 2.65-1.38a4.4 4.4 0 001.03-2.72c0-.14-.02-.27-.04-.38-.98.03-2.16.65-2.87 1.48a4.18 4.18 0 00-1.07 2.63c0 .15.03.3.04.35l.26.02zM9.13 21.7c1.2 0 1.73-.8 3.24-.8 1.52 0 1.86.78 3.2.78 1.32 0 2.2-1.21 3.03-2.4.93-1.36 1.32-2.7 1.34-2.75a4.27 4.27 0 01-2.6-3.93c0-2.5 1.98-3.62 2.1-3.71a4.6 4.6 0 00-3.87-1.93c-1.48 0-2.68.9-3.44.9-.82 0-1.9-.85-3.18-.85-2.44 0-4.9 2-4.9 5.78 0 2.35.91 4.83 2.04 6.44.97 1.36 1.82 2.47 3.03 2.47z'
                       fill='currentColor'
-                      fill-rule='nonzero'
+                      fillRule='nonzero'
                     ></path>
                   </g>
                 </svg>
@@ -179,7 +185,7 @@ const Authentication = ({ login = false }) => {
                   viewBox='0 0 24 24'
                   class='SVG__IconSVG-sc-741qml-0 jmSzln'
                 >
-                  <g transform='translate(2 2)' fill='none' fill-rule='evenodd'>
+                  <g transform='translate(2 2)' fill='none' fillRule='evenodd'>
                     <path
                       d='M20 10.06C20 4.5 15.52 0 10 0S0 4.5 0 10.06c0 5.02 3.66 9.19 8.44 9.94v-7.03H5.9v-2.9h2.54V7.83c0-2.52 1.49-3.91 3.77-3.91 1.1 0 2.24.2 2.24.2V6.6H13.2c-1.24 0-1.63.78-1.63 1.57v1.9h2.78l-.45 2.9h-2.33V20A10.05 10.05 0 0020 10.06'
                       fill='currentColor'

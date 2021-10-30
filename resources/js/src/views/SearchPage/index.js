@@ -72,9 +72,9 @@ const SearchPage = () => {
                         d='M2 5l6 6 6-6'
                         stroke='currentColor'
                         fill='none'
-                        fill-rule='evenodd'
-                        stroke-linecap='round'
-                        stroke-linejoin='round'
+                        fillRule='evenodd'
+                        strokeLinecap='round'
+                        strokeLinejoin='round'
                       ></path>
                     </svg>
                   </Button>
@@ -92,9 +92,9 @@ const SearchPage = () => {
                         d='M2 5l6 6 6-6'
                         stroke='currentColor'
                         fill='none'
-                        fill-rule='evenodd'
-                        stroke-linecap='round'
-                        stroke-linejoin='round'
+                        fillRule='evenodd'
+                        strokeLinecap='round'
+                        strokeLinejoin='round'
                       ></path>
                     </svg>
                   </Button>
@@ -112,9 +112,9 @@ const SearchPage = () => {
                         d='M2 5l6 6 6-6'
                         stroke='currentColor'
                         fill='none'
-                        fill-rule='evenodd'
-                        stroke-linecap='round'
-                        stroke-linejoin='round'
+                        fillRule='evenodd'
+                        strokeLinecap='round'
+                        strokeLinejoin='round'
                       ></path>
                     </svg>
                   </Button>
@@ -132,9 +132,9 @@ const SearchPage = () => {
                         d='M2 5l6 6 6-6'
                         stroke='currentColor'
                         fill='none'
-                        fill-rule='evenodd'
-                        stroke-linecap='round'
-                        stroke-linejoin='round'
+                        fillRule='evenodd'
+                        strokeLinecap='round'
+                        strokeLinejoin='round'
                       ></path>
                     </svg>
                   </Button>
