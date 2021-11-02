@@ -5,16 +5,15 @@ import ReactDOM from 'react-dom';
 import App from './src/App';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { Provider } from 'react-redux'
-// import store from './src/redux/store'
-// import reportWebVitals from './reportWebVitals';
+import { store } from './src/createStore'
 
 const Container = () => {
   return (
-    // <Provider store={store}>
+    <Provider store={store}>
         <Router>
             <App />
         </Router>
-    // </Provider>
+    </Provider>
   );
 };
 

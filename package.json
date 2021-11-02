@@ -8,7 +8,7 @@
         "hot": "mix watch --hot",
         "prod": "npm run production",
         "production": "mix --production",
-        "serve": "php artisan serve",
+        "s": "php artisan serve",
         "mr": "php artisan migrate",
         "seed": "php artisan db:seed",
         "rb": "php artisan migrate:rollback --step=15",

@@ -1,16 +1,16 @@
 import React, { useState } from 'react';
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 import { useSelector, useDispatch } from 'react-redux';
-import { signin } from '../../redux/actions/userActions';
+// import { signin } from '../../redux/actions/userActions';
 
 const Authentication = ({ login = false }) => {
   const [signup, setLogin] = useState(login);
   const [forgoPassword, setForgoPassword] = useState(false);
   const dispatch = useDispatch();
 
-  const LoginHandler = ()=>{
-    dispatch(signin('alifhasan332@', 'password'));
-  }
+  // const LoginHandler = ()=>{
+  //   dispatch(signin('alifhasan332@', 'password'));
+  // }
   const backtologin = () => {
     setLogin(false);
     setForgoPassword(false);

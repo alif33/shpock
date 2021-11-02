@@ -3,13 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../src/assets/styles/style.scss';
-// import Fallback from 'src/components/Fallback';
-// import NotFound from 'src/components/404';
-// import withTitle from 'src/components/TitleComponent';
-
-// Pages
-
-// const Home = lazy(() => import('../Home'));
+import UserRoute  from './routes/UserRoutes';
 
 import Home from './views/Home';
 import Header from '../src/component/Header';
@@ -20,6 +14,7 @@ import Profile from './views/Profile';
 import Shops from './views/Shops';
 import Users from './views/Users';
 import ProductSinge  from './views/ProductSingle';
+
 const App = () => {
   return (
     <>
@@ -28,7 +23,7 @@ const App = () => {
         <Switch>
           {/* Page routes */}
           <Route exact path='/' component={Home} />
-          <Route exact path='/sells' component={Sells} />
+          <UserRoute exact path='/sells' component={Sells} />
           <Route exact path='/search' component={SearchPage} />
           <Route path='/profile' component={Profile} />
           <Route path='/users' component={Users} />
