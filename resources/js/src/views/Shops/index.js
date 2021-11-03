@@ -63,7 +63,7 @@ const Shops = () => {
                       />
                       <svg
                         viewBox='0 0 24 24'
-                        class='SVG__IconSVG-sc-741qml-0 jmSzln'
+                        className='SVG__IconSVG-sc-741qml-0 jmSzln'
                         height='18'
                         width='18'
                       >

@@ -57,7 +57,7 @@ const ProductCards = () => {
     <Row className='card-section'>
       {data &&
         data.map((item, i) => (
-          <Col md={3}>
+          <Col key={i} md={3}>
             <Link to='/product-single' className='text-dark'>
               <ProductCard {...item} />
             </Link>

@@ -10,7 +10,7 @@ const index = () => {
         <div className='card-item'>
           <Link to='/shops' className='card-data'>
             <div className='icon'>
-              <svg viewBox='0 0 40 40' class='SVG__IconSVG-sc-741qml-0 jmSzln'>
+              <svg viewBox='0 0 40 40' className='SVG__IconSVG-sc-741qml-0 jmSzln'>
                 <defs>
                   <linearGradient x1='0%' y1='7.583%' y2='92.417%' id='a'>
                     <stop stopColor='#76DC96' offset='0%'></stop>
@@ -28,7 +28,7 @@ const index = () => {
           </Link>
           <Link to='/search' className='card-data'>
             <div className='icon'>
-              <svg viewBox='0 0 40 40' class='SVG__IconSVG-sc-741qml-0 jmSzln'>
+              <svg viewBox='0 0 40 40' className='SVG__IconSVG-sc-741qml-0 jmSzln'>
                 <defs>
                   <linearGradient x1='0%' y1='0%' y2='100%' id='a'>
                     <stop stopColor='#76DC96' offset='0%'></stop>

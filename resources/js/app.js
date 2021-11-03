@@ -4,15 +4,24 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './src/App';
 import { BrowserRouter as Router } from 'react-router-dom';
+import {
+  QueryClient,
+  QueryClientProvider,
+} from 'react-query'
+import 'react-toastify/dist/ReactToastify.min.css';
 import { Provider } from 'react-redux'
-import { store } from './src/createStore'
+import { store } from './src/store'
+
+const queryClient = new QueryClient()
 
 const Container = () => {
   return (
     <Provider store={store}>
-        <Router>
+      <QueryClientProvider client={queryClient}>
+          <Router>
             <App />
-        </Router>
+          </Router>
+      </QueryClientProvider>
     </Provider>
   );
 };

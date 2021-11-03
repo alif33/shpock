@@ -24,8 +24,9 @@ class UserController extends Controller
 
     protected function respondWithToken($token)
     {
-        return response()->json(
-            [
+        return response()->json(   
+            [   
+                'success'        => true,
                 'token'          => $token,
                 'token_type'     => 'bearer',
                 'token_validity' => ($this->guard()->factory()->getTTL() * 60),
@@ -53,11 +54,12 @@ class UserController extends Controller
         $this->guard()->factory()->setTTL($token_validity);
 
         if (!$token = $this->guard()->attempt($validator->validated())) {
-            return response()->json(['error' => 'Unauthorized'], 401);
+            return response()->json([
+                'success' => false,
+                'message' => 'Invalid Creadentials'
+            ], 401);
         }
-
-        return $this->respondWithToken($token);
-
+        return   $this->respondWithToken($token);
     }
 
 

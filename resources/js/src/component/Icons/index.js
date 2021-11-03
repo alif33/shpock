@@ -1,6 +1,6 @@
 export const iconTv = () => {
   return (
-    <svg viewBox='0 0 32 32' class='SVG-wlnxuy-0 bIwcGB'>
+    <svg viewBox='0 0 32 32' className='SVG-wlnxuy-0 bIwcGB'>
       <defs>
         <path
           id='laptop-with-mouse-styled-path-1'

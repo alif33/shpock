@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { Col, Row } from 'reactstrap';
+import { useQuery } from 'react-query'
+import { getData } from '../../../services/HttpService'
+
 const index = () => {
   const settings = {
     dots: false,
@@ -13,41 +16,54 @@ const index = () => {
     slidesToScroll: 1,
     arrows: true,
   };
+
+  const { data } = useQuery('categories', ()=> getData('/categories'))
+
+  console.log('Data', data);
+  // useEffect(()=>{
+    
+  // }, [])
+
   return (
     <Row className='category-slider'>
       <Col md={10}>
         <Slider {...settings}>
-          <Link to='/search' className='category-items'>
-            <div>
-              <svg viewBox='0 0 32 32' class='SVG-wlnxuy-0 bIwcGB'>
-                <defs>
-                  <path
-                    id='laptop-with-mouse-styled-path-1'
-                    d='M22 .891H1a1 1 0 0 0-.993.883L0 1.891v13h18v-1a4 4 0 0 1 4.77-3.926l.23.052V1.891a1 1 0 0 0-.883-.993L22 .89z'
-                  ></path>
-                  <path
-                    id='laptop-with-mouse-styled-path-2'
-                    d='M22 .891l.117.007A1 1 0 0 1 23 1.89v.035l-.04.003c-3.947.214-8.003-.159-11.803.86C6.288 4.095.729 10.134 8.139 12.536c1.674.542 6.213 1.15 9.862 2.218L18 14.89H0v-13l.007-.117A1 1 0 0 1 1 .891h21z'
-                  ></path>
-                </defs>
-                <g fill='currentColor' fillRule='nonzero'>
-                  <path d='M26 5a2 2 0 0 1 2 2l.001 8.536-.066-.037A3.999 3.999 0 0 1 30 19v4a4 4 0 0 1-7.874 1H4a2 2 0 0 1-2-2v-1a1 1 0 0 1 .999-1L3 7a2 2 0 0 1 2-2h21zm0 11a3 3 0 0 0-2.995 2.824L23 19v4a3 3 0 0 0 5.995.176L29 23v-4a3 3 0 0 0-3-3zm-4 5H3v1a1 1 0 0 0 .883.993L4 23h18v-2zm4-3a.5.5 0 0 1 .492.41l.008.09V20a.5.5 0 0 1-.992.09L25.5 20v-1.5a.5.5 0 0 1 .5-.5zm0-12H5a1 1 0 0 0-.993.883L4 7v13h18v-1a4 4 0 0 1 4.77-3.926l.23.052V7a1 1 0 0 0-.883-.993L26 6z'></path>
-                  <g transform='translate(4 5.109)'>
-                    <use opacity='.05'></use>
-                    <use opacity='.15'></use>
-                  </g>
-                  <path
-                    d='M26 16a3 3 0 0 1 3 3v4l-.005.176A3 3 0 0 1 23 23v-4l.005-.176A3 3 0 0 1 26 16zm-4 5v2H4l-.117-.007A1 1 0 0 1 3 22v-1h19z'
-                    opacity='.15'
-                  ></path>
-                </g>
-              </svg>
-            </div>
-            <h6 className='title'>Electronics</h6>
-          </Link>
+          {data?.map(category=>{
+              return(
+                <Link key={category.id} to='/search' className='category-items'>
+                  <div>
+                    <svg viewBox='0 0 32 32' className='SVG-wlnxuy-0 bIwcGB'>
+                      <defs>
+                        <path
+                          id='laptop-with-mouse-styled-path-1'
+                          d='M22 .891H1a1 1 0 0 0-.993.883L0 1.891v13h18v-1a4 4 0 0 1 4.77-3.926l.23.052V1.891a1 1 0 0 0-.883-.993L22 .89z'
+                        ></path>
+                        <path
+                          id='laptop-with-mouse-styled-path-2'
+                          d='M22 .891l.117.007A1 1 0 0 1 23 1.89v.035l-.04.003c-3.947.214-8.003-.159-11.803.86C6.288 4.095.729 10.134 8.139 12.536c1.674.542 6.213 1.15 9.862 2.218L18 14.89H0v-13l.007-.117A1 1 0 0 1 1 .891h21z'
+                        ></path>
+                      </defs>
+                      <g fill='currentColor' fillRule='nonzero'>
+                        <path d='M26 5a2 2 0 0 1 2 2l.001 8.536-.066-.037A3.999 3.999 0 0 1 30 19v4a4 4 0 0 1-7.874 1H4a2 2 0 0 1-2-2v-1a1 1 0 0 1 .999-1L3 7a2 2 0 0 1 2-2h21zm0 11a3 3 0 0 0-2.995 2.824L23 19v4a3 3 0 0 0 5.995.176L29 23v-4a3 3 0 0 0-3-3zm-4 5H3v1a1 1 0 0 0 .883.993L4 23h18v-2zm4-3a.5.5 0 0 1 .492.41l.008.09V20a.5.5 0 0 1-.992.09L25.5 20v-1.5a.5.5 0 0 1 .5-.5zm0-12H5a1 1 0 0 0-.993.883L4 7v13h18v-1a4 4 0 0 1 4.77-3.926l.23.052V7a1 1 0 0 0-.883-.993L26 6z'></path>
+                        <g transform='translate(4 5.109)'>
+                          <use opacity='.05'></use>
+                          <use opacity='.15'></use>
+                        </g>
+                        <path
+                          d='M26 16a3 3 0 0 1 3 3v4l-.005.176A3 3 0 0 1 23 23v-4l.005-.176A3 3 0 0 1 26 16zm-4 5v2H4l-.117-.007A1 1 0 0 1 3 22v-1h19z'
+                          opacity='.15'
+                        ></path>
+                      </g>
+                    </svg>
+                  </div>
+                  <h6 className='title'>{category.category_name}</h6>
+                </Link>
+              )
+          })}
+
           <Link to='#' className='category-items'>
             <div>
-              <svg viewBox='0 0 32 32' class='SVG-wlnxuy-0 bIwcGB'>
+              <svg viewBox='0 0 32 32' className='SVG-wlnxuy-0 bIwcGB'>
                 <defs>
                   <path
                     id='t-shirt-styled-path-1'
@@ -75,7 +91,7 @@ const index = () => {
           </Link>
           <Link to='#' className='category-items'>
             <div>
-              <svg viewBox='0 0 32 32' class='SVG-wlnxuy-0 bIwcGB'>
+              <svg viewBox='0 0 32 32' className='SVG-wlnxuy-0 bIwcGB'>
                 <defs>
                   <path
                     id='couch-styled-path-1'
@@ -105,7 +121,7 @@ const index = () => {
           </Link>
           <Link to='#' className='category-items'>
             <div>
-              <svg viewBox='0 0 32 32' class='SVG-wlnxuy-0 bIwcGB'>
+              <svg viewBox='0 0 32 32' className='SVG-wlnxuy-0 bIwcGB'>
                 <defs>
                   <path
                     id='baby-carriage-styled-path-1'
@@ -136,7 +152,7 @@ const index = () => {
           </Link>
           <Link to='#' className='category-items'>
             <div>
-              <svg viewBox='0 0 32 32' class='SVG-wlnxuy-0 bIwcGB'>
+              <svg viewBox='0 0 32 32' className='SVG-wlnxuy-0 bIwcGB'>
                 <g fill='currentColor' fillRule='nonzero'>
                   <path d='M25.154 8.1c1.376.018 2.117.907 2.117 2.448a.5.5 0 0 1-.391.488l-.087.011a.501.501 0 0 1-.612-.487c0-.967-.303-1.387-.99-1.442l-.133-.006h-2.394l1.473 5.9a5.5 5.5 0 1 1-.992.157l-.539-2.158-6.418 7.524a.495.495 0 0 1-.316.172l-.167.01h-2.71a5.5 5.5 0 1 1-3.196-5.215l1.597-2.605.022-.03-1.246-2.392a.5.5 0 0 1-.049-.144h-1.45a.5.5 0 0 1-.09-.992l.09-.008h3.98a.5.5 0 0 1 .09.992l-.09.008h-1.428l.75 1.439h10.321l-.76-3.049a.5.5 0 0 1 .399-.613l.086-.008h3.133zM7.5 16a4.5 4.5 0 1 0 4.495 4.717H7.5a.5.5 0 0 1-.463-.69l.037-.072 2.199-3.592A4.485 4.485 0 0 0 7.5 16zm17 0l-.117.002 1.021 4.093a.5.5 0 0 1-.94.328l-.03-.086-1.048-4.198A4.502 4.502 0 0 0 24.5 25a4.5 4.5 0 1 0 0-9zm-12.545-2.103l-1.289 2.105a5.499 5.499 0 0 1 2.279 3.715h2.041l-3.031-5.82zm-1.812 2.96l-1.751 2.859h3.54a4.5 4.5 0 0 0-1.79-2.859zm11.354-4.087h-9.001l3.413 6.552 5.588-6.552z'></path>
                   <path
@@ -158,7 +174,7 @@ const index = () => {
           </Link>
           <Link to='#' className='category-items'>
             <div>
-              <svg viewBox='0 0 32 32' class='SVG-wlnxuy-0 bIwcGB'>
+              <svg viewBox='0 0 32 32' className='SVG-wlnxuy-0 bIwcGB'>
                 <defs>
                   <path
                     id='vinyl-styled-path-1'
@@ -194,7 +210,7 @@ const index = () => {
           </Link>
           <Link to='#' className='category-items'>
             <div>
-              <svg viewBox='0 0 32 32' class='SVG-wlnxuy-0 bIwcGB'>
+              <svg viewBox='0 0 32 32' className='SVG-wlnxuy-0 bIwcGB'>
                 <defs>
                   <path
                     id='vinyl-styled-path-1'
@@ -230,7 +246,7 @@ const index = () => {
           </Link>
           <Link to='#' className='category-items'>
             <div>
-              <svg viewBox='0 0 32 32' class='SVG-wlnxuy-0 bIwcGB'>
+              <svg viewBox='0 0 32 32' className='SVG-wlnxuy-0 bIwcGB'>
                 <defs>
                   <path
                     id='car-icon-styled-path-1'
@@ -283,7 +299,7 @@ const index = () => {
           </Link>
           <Link to='#' className='category-items'>
             <div>
-              <svg viewBox='0 0 32 32' class='SVG-wlnxuy-0 bIwcGB'>
+              <svg viewBox='0 0 32 32' className='SVG-wlnxuy-0 bIwcGB'>
                 <defs>
                   <path
                     id='house-styled-path-1'
@@ -307,7 +323,7 @@ const index = () => {
           </Link>
           <Link to='#' className='category-items'>
             <div>
-              <svg viewBox='0 0 32 32' class='SVG-wlnxuy-0 bIwcGB'>
+              <svg viewBox='0 0 32 32' className='SVG-wlnxuy-0 bIwcGB'>
                 <defs>
                   <path
                     id='paint-roller-styled-path-1'
@@ -331,7 +347,7 @@ const index = () => {
           </Link>
           <Link to='#' className='category-items'>
             <div>
-              <svg viewBox='0 0 32 32' class='SVG-wlnxuy-0 bIwcGB'>
+              <svg viewBox='0 0 32 32' className='SVG-wlnxuy-0 bIwcGB'>
                 <g fill='currentColor' fillRule='nonzero'>
                   <path d='M7 13a3 3 0 1 1 0 6 3 3 0 0 1 0-6zm9 0a3 3 0 1 1 0 6 3 3 0 0 1 0-6zm9 0a3 3 0 1 1 0 6 3 3 0 0 1 0-6zM7 14a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm9 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm9 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4z'></path>
                   <path

@@ -25,7 +25,7 @@ const Sells = () => {
             <h5>Sell an item</h5>
             <Form>
               <div className='imageinputarea divider'>
-                <label for='images' class='Label'>
+                <label for='images' className='Label'>
                   Add photos
                 </label>
                 <div className='ImageDropzone'>
@@ -123,7 +123,7 @@ const Sells = () => {
                 <Label for="exampleSelect">Your product will be listed here</Label>
                 <div className='select d-flex align-items-center justify-content-between border p-2 w-50' onClick={()=> setModal(!modal)}>
                   Choose a category
-                  <svg style={{height:'16px',width:'16px'}} viewBox="0 0 16 16" class="SVG__IconSVG-sc-741qml-0 kHWUOM"><path d="M4,4L12,4L8,8Z" fill="currentColor" stroke="currentColor" strokeWidth="1px" strokeLinecap="butt"></path></svg>
+                  <svg style={{height:'16px',width:'16px'}} viewBox="0 0 16 16" className="SVG__IconSVG-sc-741qml-0 kHWUOM"><path d="M4,4L12,4L8,8Z" fill="currentColor" stroke="currentColor" strokeWidth="1px" strokeLinecap="butt"></path></svg>
                 </div>
                  <ModalRight modal={modal} setModal={setModal}>
                    <Category />
@@ -150,7 +150,7 @@ const Sells = () => {
                       >
                         <svg
                           viewBox='0 0 24 24'
-                          class='SVG__IconSVG-sc-741qml-0 jmSzln'
+                          className='SVG__IconSVG-sc-741qml-0 jmSzln'
                         >
                           <path
                             d='M17.751 18.392l4.05 4.355a.752.752 0 0 1-.028 1.05.719.719 0 0 1-1.03-.029l-4.111-4.422a10.306 10.306 0 0 1-6.147 2.027C4.695 21.373 0 16.59 0 10.687S4.694 0 10.485 0c5.791 0 10.486 4.785 10.486 10.687 0 3.027-1.235 5.76-3.22 7.705zm-7.266 1.497c4.987 0 9.03-4.12 9.03-9.202 0-5.083-4.043-9.203-9.03-9.203-4.986 0-9.029 4.12-9.029 9.203 0 5.082 4.043 9.202 9.03 9.202z'

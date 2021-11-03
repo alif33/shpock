@@ -23,7 +23,7 @@ const FilterMobile = () => {
             price
             <svg
               viewBox='0 0 16 16'
-              class='SVG__IconSVG-sc-741qml-0 jmSzln'
+              className='SVG__IconSVG-sc-741qml-0 jmSzln'
             >
               <path
                 d='M2 5l6 6 6-6'
@@ -44,7 +44,7 @@ const FilterMobile = () => {
             Date Listed
             <svg
               viewBox='0 0 16 16'
-              class='SVG__IconSVG-sc-741qml-0 jmSzln'
+              className='SVG__IconSVG-sc-741qml-0 jmSzln'
               className={`${date && 'clicked'}`}
             >
               <path
@@ -66,7 +66,7 @@ const FilterMobile = () => {
             Short
             <svg
               viewBox='0 0 16 16'
-              class='SVG__IconSVG-sc-741qml-0 jmSzln'
+              className='SVG__IconSVG-sc-741qml-0 jmSzln'
               className={`${shorts && 'clicked'}`}
             >
               <path
@@ -88,7 +88,7 @@ const FilterMobile = () => {
             Category
             <svg
               viewBox='0 0 16 16'
-              class='SVG__IconSVG-sc-741qml-0 jmSzln'
+              className='SVG__IconSVG-sc-741qml-0 jmSzln'
               className={`${category && 'clicked'}`}
             >
               <path

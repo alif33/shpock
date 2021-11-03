@@ -1,15 +1,20 @@
 import React from "react";
 import { Redirect, Route } from "react-router-dom";
+import { useSelector, useDispatch } from 'react-redux';
+import { 
+  attemptToLogin,
+} from "../redux/settings/actions";
 
 function UserRoute({ component: Component, ...rest }) {
-  const isAuthenticated = localStorage.getItem("isAuthenticated");
-  console.log("this", isAuthenticated);
+  
+  const { users } = useSelector( state => state)
+  const dispatch = useDispatch()
 
   return (
     <Route
       {...rest}
       render={(props) =>
-        isAuthenticated ? <Component {...props} /> : <Redirect to="/" />
+        users.isUser ? <Component {...props} /> : <Redirect to="/" render={ dispatch(attemptToLogin()) } />
       }
     />
   );

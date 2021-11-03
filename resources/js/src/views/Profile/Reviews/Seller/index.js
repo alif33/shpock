@@ -9,7 +9,7 @@ const Seller = (props) => {
         <div>data content here </div>
       ) : (
         <div className='text-center'>
-          <svg viewBox='0 0 250 250' class='not-found'>
+          <svg viewBox='0 0 250 250' className='not-found'>
             <defs>
               <path
                 d='M71.538 113.068L35.4 131.99a5 5 0 0 1-7.247-5.278l6.897-40.05L5.853 58.318a5 5 0 0 1 2.766-8.536l40.368-5.843L67.058 7.47a5 5 0 0 1 8.96 0L94.09 43.94l40.367 5.843a5 5 0 0 1 2.767 8.536l-29.197 28.345 6.897 40.05a5 5 0 0 1-7.247 5.278l-36.139-18.923z'

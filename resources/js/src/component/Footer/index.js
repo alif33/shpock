@@ -91,7 +91,7 @@ const Footer = () => {
           <Col xl={3} lg={3} md={6} sm={6} className='logo'>
             <button>
               English{' '}
-              <svg viewBox='0 0 16 16' class='SVG__IconSVG-sc-741qml-0 jmSzln'>
+              <svg viewBox='0 0 16 16' className='SVG__IconSVG-sc-741qml-0 jmSzln'>
                 <path
                   d='M2 5l6 6 6-6'
                   stroke='currentColor'

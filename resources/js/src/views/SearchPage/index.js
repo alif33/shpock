@@ -65,7 +65,7 @@ const SearchPage = () => {
                     price
                     <svg
                       viewBox='0 0 16 16'
-                      class='SVG__IconSVG-sc-741qml-0 jmSzln'
+                      className='SVG__IconSVG-sc-741qml-0 jmSzln'
                       className={`${price && 'clicked'}`}
                     >
                       <path
@@ -85,7 +85,7 @@ const SearchPage = () => {
                     Date Listed
                     <svg
                       viewBox='0 0 16 16'
-                      class='SVG__IconSVG-sc-741qml-0 jmSzln'
+                      className='SVG__IconSVG-sc-741qml-0 jmSzln'
                       className={`${date && 'clicked'}`}
                     >
                       <path
@@ -105,7 +105,7 @@ const SearchPage = () => {
                     Short
                     <svg
                       viewBox='0 0 16 16'
-                      class='SVG__IconSVG-sc-741qml-0 jmSzln'
+                      className='SVG__IconSVG-sc-741qml-0 jmSzln'
                       className={`${shorts && 'clicked'}`}
                     >
                       <path
@@ -125,7 +125,7 @@ const SearchPage = () => {
                     Category
                     <svg
                       viewBox='0 0 16 16'
-                      class='SVG__IconSVG-sc-741qml-0 jmSzln'
+                      className='SVG__IconSVG-sc-741qml-0 jmSzln'
                       className={`${category && 'clicked'}`}
                     >
                       <path

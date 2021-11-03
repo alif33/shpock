@@ -46,7 +46,7 @@ const ProductsTags = () => {
       <Col>
         {data &&
           data.map((item, i) => (
-            <div className='tags-item'>
+            <div key={i} className='tags-item'>
               <Link to={item.link}>{item.title}</Link>
               <div className='tags-items'>
                 {item.items &&

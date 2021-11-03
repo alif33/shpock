@@ -4,7 +4,8 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../src/assets/styles/style.scss';
 import UserRoute  from './routes/UserRoutes';
-
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.min.css';
 import Home from './views/Home';
 import Header from '../src/component/Header';
 import Footer from '../src/component/Footer';
@@ -28,10 +29,11 @@ const App = () => {
           <Route path='/profile' component={Profile} />
           <Route path='/users' component={Users} />
           <Route exact path='/shops' component={Shops} />
-           <Route exact path='/product-single' component={ProductSinge} />
+          <Route exact path='/product-single' component={ProductSinge} />
         </Switch>
         <Footer />
       </Router>
+      <ToastContainer />
     </>
   );
 };

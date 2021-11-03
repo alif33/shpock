@@ -6,7 +6,7 @@ const index = () => {
   return (
     <Col className='product-not-found text-center mb-4' md={{size:6,offset:3}}>
       <div>
-        <svg viewBox='0 0 250 250' class='SVG-wlnxuy-0 cnIZnY'>
+        <svg viewBox='0 0 250 250' className='SVG-wlnxuy-0 cnIZnY'>
           <g fill='none' fillRule='evenodd'>
             <ellipse
               fill-opacity='.059'
