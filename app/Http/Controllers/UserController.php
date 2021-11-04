@@ -59,7 +59,7 @@ class UserController extends Controller
                 'message' => 'Invalid Creadentials'
             ], 401);
         }
-        return   $this->respondWithToken($token);
+        return $this->respondWithToken($token);
     }
 
 

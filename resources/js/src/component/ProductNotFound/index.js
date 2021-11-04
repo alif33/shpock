@@ -9,7 +9,7 @@ const index = () => {
         <svg viewBox='0 0 250 250' className='SVG-wlnxuy-0 cnIZnY'>
           <g fill='none' fillRule='evenodd'>
             <ellipse
-              fill-opacity='.059'
+              fillOpacity='.059'
               fill='#000'
               cx='123'
               cy='217'
@@ -76,7 +76,7 @@ const index = () => {
                 strokeWidth='7'
               >
                 <ellipse
-                  fill-opacity='.5'
+                  fillOpacity='.5'
                   fill='#FFF'
                   cx='51.634'
                   cy='33.327'
@@ -85,7 +85,7 @@ const index = () => {
                 ></ellipse>
                 <path
                   d='M23.087 48.766L.155 62.043'
-                  fill-opacity='.376'
+                  fillOpacity='.376'
                   fill='#D8D8D8'
                   strokeLinecap='round'
                 ></path>

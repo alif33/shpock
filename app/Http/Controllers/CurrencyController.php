@@ -2,13 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Category;
+use App\Models\Currency;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
-class CategoryController extends Controller
-{   
-
+class CurrencyController extends Controller
+{
     public function __construct()
     {
         $this->middleware('auth:admin', ['except' => ['index']]);
@@ -17,7 +16,7 @@ class CategoryController extends Controller
 
     public function index()
     {
-        return Category::all();
+        return Currency::all();
     }
 
     public function store(Request $request)
@@ -25,7 +24,8 @@ class CategoryController extends Controller
         $validator = Validator::make(
             $request->all(),
             [
-                'category_name' => 'required|string|between:2,30|unique:categories',
+                'currency_name' => 'required|string',
+                'currency_code' => 'required|string',
             ]
         );
 
@@ -36,18 +36,13 @@ class CategoryController extends Controller
             );
         }
 
-        $category = Category::create(
+        $currency = Currency::create(
             array_merge(
                 $validator->validated()
             )
         );
 
-        if ($category) {
-            return response()->json([
-                'success' => true,
-                'message' => 'Category created successfully.'
-            ], 201);
-        }
+        
     }
 
     public function update(Request $request, $id)
@@ -86,4 +81,5 @@ class CategoryController extends Controller
             );
        } 
     }
+
 }

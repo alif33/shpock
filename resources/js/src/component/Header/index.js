@@ -124,6 +124,9 @@ const Header = () => {
                             <Link to="/users/reviews">
                               reviews
                             </Link>
+                            <Link to="/admin/categories">
+                              categories
+                            </Link>
                             <Button onClick={ () => dispatch(userLogout()) }>
                               Logout
                             </Button>

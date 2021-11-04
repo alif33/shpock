@@ -5,19 +5,23 @@ export const SettingSlice = createSlice({
     name: "settings",
     initialState: {
         modal: false,
-        login: true,
+        login: false,
         signup: false,
         forget: false,
     },
     reducers: {
         toggle: (state, action) => {
-            state.modal = !action.payload
+            return{
+                ...state,
+                modal: !action.payload,
+                login: false
+            }
         },
         switchToLogin: (state, action) => {
             return {
                 ...state,
                 modal: true,
-                login: false,
+                login: true,
                 signup: false,
                 forget: false
             }

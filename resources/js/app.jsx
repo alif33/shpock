@@ -19,7 +19,9 @@ const Container = () => {
     <Provider store={store}>
       <QueryClientProvider client={queryClient}>
           <Router>
-            <App />
+            <React.StrictMode>
+              <App />
+            </React.StrictMode>
           </Router>
       </QueryClientProvider>
     </Provider>

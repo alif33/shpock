@@ -7,7 +7,7 @@ import { attemptToLogin } from "../../../redux/settings/actions";
 const Signup = () => {
 
   const { settings } = useSelector(state=>state)
-  const dispatch = useDispatch();
+  const dispatch = useDispatch()
 
   return (
     <div className='signup'>

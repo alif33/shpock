@@ -51,8 +51,10 @@ const Authentication = () => {
         </div>
       ) : settings.signup ? (
         <Signup />
-      ) : (
+      ) : settings.login ? (
         <Login />
+      ):(
+        <></>
       )}
     </div>
   );

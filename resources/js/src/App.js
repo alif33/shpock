@@ -12,6 +12,7 @@ import Footer from '../src/component/Footer';
 import Sells from './views/Sells';
 import SearchPage from './views/SearchPage';
 import Profile from './views/Profile';
+import Admin from './views/Admin';
 import Shops from './views/Shops';
 import Users from './views/Users';
 import ProductSinge  from './views/ProductSingle';
@@ -28,6 +29,7 @@ const App = () => {
           <Route exact path='/search' component={SearchPage} />
           <Route path='/profile' component={Profile} />
           <Route path='/users' component={Users} />
+          <Route path='/admin' component={Admin} />
           <Route exact path='/shops' component={Shops} />
           <Route exact path='/product-single' component={ProductSinge} />
         </Switch>

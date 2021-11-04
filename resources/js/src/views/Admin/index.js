@@ -3,7 +3,7 @@ import { Switch, Route } from 'react-router-dom';
 import { Container, Row, Col } from 'reactstrap';
 
 // import Sidebar from './Sidebar';
-import Messages from './Messages';
+import Category from './Category';
 import Selling from './Selling';
 import Buying from './Buying';
 import Reviews from './Reviews';
@@ -25,8 +25,8 @@ const Routes = () => {
               </Col>
             </Row>
             <Switch>
-              <Route exact path='/categories' component={Messages} />
-              <Route exact path='/sub-categories' component={Selling} />
+              <Route exact path='/admin/categories' component={Category} />
+              <Route exact path='/Profile/selling' component={Selling} />
               <Route exact path='/Profile/buying' component={Buying} />
               <Route exact path='/Profile/watchlist' component={WatchLists} />
               <Route exact path='/Profile/reviews' component={Reviews} />

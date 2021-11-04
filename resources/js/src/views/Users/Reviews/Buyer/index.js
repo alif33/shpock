@@ -18,7 +18,7 @@ const Buyer = (props) => {
             </defs>
             <g fill='none' fillRule='evenodd'>
               <ellipse
-                fill-opacity='.059'
+                fillOpacity='.059'
                 fill='#000'
                 cx='124.597'
                 cy='213.773'

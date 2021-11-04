@@ -18,19 +18,19 @@ class CreateProductsTable extends Migration
             $table->string('title');
             $table->string('description', 1000);
             $table->decimal('price');
-            $table->enum('currency', ['USD', 'EUR', 'BDT']);
             $table->boolean('featured')->default(false);
             $table->text('images')->nullable();
-            $table->bigInteger('category_id')->unsigned()->nullable();
-            $table->bigInteger('subcategory_id')->unsigned()->nullable();
-            $table->bigInteger('nextcategory_id')->unsigned()->nullable();
-            $table->bigInteger('user_id')->unsigned()->nullable();
+            $table->bigInteger('category_id')->unsigned();
+            $table->bigInteger('subcategory_id')->unsigned();
+            $table->bigInteger('nextcategory_id')->unsigned();
+            $table->bigInteger('currency_id')->unsigned();
+            $table->bigInteger('user_id')->unsigned();
             $table->timestamps();
             $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
             $table->foreign('subcategory_id')->references('id')->on('subcategories')->onDelete('cascade');
             $table->foreign('nextcategory_id')->references('id')->on('nextcategories')->onDelete('cascade');
+            $table->foreign('currency_id')->references('id')->on('currencies')->onDelete('cascade');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-
         });
     }
 

@@ -14,9 +14,15 @@ import {
 } from 'reactstrap';
 import ModalRight from '../../component/ModalRight';
 import Category from './Category';
+import { useSelector, useDispatch} from 'react-redux';
+import { toggleModal } from '../../redux/settings/actions';
 
 const Sells = () => {
   const [modal, setModal] = useState(false);
+
+  const { users, settings } = useSelector(state=>state)
+  const dispatch = useDispatch()
+
   return (
     <section className='sells pt-4' style={{ background: '#F7F8F7' }}>
       <Container>
@@ -87,7 +93,7 @@ const Sells = () => {
               </div>
               <div className='divider'>
                 <FormGroup className='mb-2 mr-sm-2 mb-sm-0'>
-                  <Label for='exampleEmail'>Title</Label>
+                  <Label htmlFor='exampleEmail'>Title</Label>
                   <Input
                     type='text'
                     name='title'
@@ -95,13 +101,13 @@ const Sells = () => {
                   />
                 </FormGroup>
                 <FormGroup>
-                  <Label for='exampleText'>Description </Label>
+                  <Label htmlFor='exampleText'>Description </Label>
                   <Input type='textarea' name='text' id='exampleText' />
                 </FormGroup>
                 <Row>
                   <Col md={2}>
                     <FormGroup>
-                      <Label for='exampleSelect'>Price</Label>
+                      <Label htmlFor='exampleSelect'>Price</Label>
                       <Input type='select' name='select' id='exampleSelect'>
                         <option>EUR</option>
                         <option>EUR</option>
@@ -121,7 +127,7 @@ const Sells = () => {
               </div>
               <div className='divider category-box m-0'>
                 <Label for="exampleSelect">Your product will be listed here</Label>
-                <div className='select d-flex align-items-center justify-content-between border p-2 w-50' onClick={()=> setModal(!modal)}>
+                <div className='select d-flex align-items-center justify-content-between border p-2 w-50' onClick={ ()=> dispatch(toggleModal(settings.modal)) }>
                   Choose a category
                   <svg style={{height:'16px',width:'16px'}} viewBox="0 0 16 16" className="SVG__IconSVG-sc-741qml-0 kHWUOM"><path d="M4,4L12,4L8,8Z" fill="currentColor" stroke="currentColor" strokeWidth="1px" strokeLinecap="butt"></path></svg>
                 </div>

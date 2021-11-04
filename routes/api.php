@@ -7,6 +7,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\FollowController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\CurrencyController;
 use App\Http\Controllers\SubCategoryController;
 use App\Http\Controllers\NextCategoryController;
 
@@ -45,8 +46,8 @@ Route::group([
 
 ], function () use ($router) {
 
-    Route::post('login', [AdminController::class, 'login']);
-    Route::post('register', [AdminController::class, 'register']);
+    Route::post('/login', [AdminController::class, 'login']);
+    Route::post('/register', [AdminController::class, 'register']);
     Route::post('refresh', 'UserController@refresh');
     Route::post('me', 'UserController@me');
 
@@ -99,6 +100,23 @@ Route::group(
         Route::delete('nextcategory/{id}', [NextCategoryController::class, 'destory']);
     }
 );
+
+
+// Category
+
+Route::group(
+    [
+        'prefix' => '/'
+    ],
+    function ($router) {
+        Route::get('/currencies', [CurrencyController::class, 'index']);
+        Route::get('category/{id}', [CategoryController::class, 'show']);
+        Route::post('category', [CategoryController::class, 'store']);
+        Route::put('category/{id}', [CategoryController::class, 'update']);
+        Route::delete('category/{id}', [CategoryController::class, 'destory']);
+    }
+);
+
 
 
 
