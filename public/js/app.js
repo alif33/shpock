@@ -8657,7 +8657,7 @@ var store = (0,_reduxjs_toolkit__WEBPACK_IMPORTED_MODULE_4__.configureStore)({
   },
   devTools: "development" !== "production"
 });
-var persistor = (0,redux_persist__WEBPACK_IMPORTED_MODULE_1__.persistStore)(store);
+var persistor = (0,redux_persist__WEBPACK_IMPORTED_MODULE_1__.persistStore)(store); // https://www.youtube.com/watch?v=xXOXAPnYzrA
 
 /***/ }),
 
