@@ -27,8 +27,8 @@ const Routes = () => {
             <Switch>
               <Route exact path='/categories' component={Messages} />
               <Route exact path='/sub-categories' component={Selling} />
-              <Route exact path='/Profile/buying' component={Buying} />
-              <Route exact path='/Profile/watchlist' component={WatchLists} />
+              <Route exact path='/buying' component={Buying} />
+              <Route exact path='/watchlist' component={WatchLists} />
               <Route exact path='/Profile/reviews' component={Reviews} />
             </Switch>
           </Col>

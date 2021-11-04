@@ -10,20 +10,21 @@ import {
 } from 'react-query'
 import 'react-toastify/dist/ReactToastify.min.css';
 import { Provider } from 'react-redux'
-import { store } from './src/store'
+import { store, persistor } from './src/store'
+import { PersistGate } from 'redux-persist/integration/react'
 
 const queryClient = new QueryClient()
 
 const Container = () => {
   return (
     <Provider store={store}>
-      <QueryClientProvider client={queryClient}>
-          <Router>
-            <React.StrictMode>
-              <App />
-            </React.StrictMode>
-          </Router>
-      </QueryClientProvider>
+      <PersistGate loading={null} persistor={persistor}>
+        <QueryClientProvider client={queryClient}>
+            <Router>
+                <App />
+            </Router>
+        </QueryClientProvider>
+      </PersistGate>
     </Provider>
   );
 };

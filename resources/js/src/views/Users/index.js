@@ -22,7 +22,6 @@ const Users = () => {
             </Row>
             <Switch>
               <Route exact path='/users' component={Items} />
-              >
               <Route exact path='/users/reviews' component={Reviews} />
             </Switch>
           </Col>

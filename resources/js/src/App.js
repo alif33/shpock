@@ -29,7 +29,7 @@ const App = () => {
           <Route exact path='/search' component={SearchPage} />
           <Route path='/profile' component={Profile} />
           <Route path='/users' component={Users} />
-          <Route path='/admin' component={Admin} />
+          <Route path='/' component={Admin} />
           <Route exact path='/shops' component={Shops} />
           <Route exact path='/product-single' component={ProductSinge} />
         </Switch>
