@@ -5,15 +5,21 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Category extends Model
+class Provider extends Model
 {
     use HasFactory;
+
     
-    protected $table = 'categories';
-   
     protected $fillable = [
-        'category_name',
-        'category_slug',
-        'category_icon',
+        'provider',
+        'provider_id',
+        'user_id',
+        'avatar'
     ];
+
+    protected $hidden = [
+        'created_at',
+        'updated_at'
+    ];
+
 }

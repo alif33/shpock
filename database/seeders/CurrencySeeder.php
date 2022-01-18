@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Currency;
 use Illuminate\Database\Seeder;
 
 class CurrencySeeder extends Seeder
@@ -13,6 +14,6 @@ class CurrencySeeder extends Seeder
      */
     public function run()
     {
-        //
+        Currency::factory()->times(30)->create();
     }
 }

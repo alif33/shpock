@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Str;
 use App\Models\NextCategory;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -10,12 +11,12 @@ class NextCategoryController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth:admin', ['except' => ['show']]);
+        $this->middleware('auth:admin', ['except' => ['index', 'show']]);
     }
 
     public function index()
     {
-        return NextCategory::all();
+        return NextCategory::orderBy('id', 'DESC')->get();
     }
 
     public function store(Request $request)
@@ -37,11 +38,21 @@ class NextCategoryController extends Controller
             );
         }
 
-        $category = NextCategory::create(
+        $next_category = NextCategory::create(
             array_merge(
+                [
+                    'nextcategory_slug' => Str::slug($request->nextcategory_name, '-')
+                ],
                 $validator->validated()
             )
         );
+
+        if ($next_category) {
+            return response()->json([
+                'success' => true,
+                'message' => 'Sub Category created successfully.'
+            ], 201);
+        }
     }
 
     public function update(Request $request, $id)

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
@@ -14,10 +15,9 @@ class CategoryController extends Controller
         $this->middleware('auth:admin', ['except' => ['index']]);
     }
 
-
     public function index()
     {
-        return Category::all();
+        return Category::orderBy('id', 'DESC')->get();
     }
 
     public function store(Request $request)
@@ -26,6 +26,7 @@ class CategoryController extends Controller
             $request->all(),
             [
                 'category_name' => 'required|string|between:2,30|unique:categories',
+                'category_icon' => 'required',
             ]
         );
 
@@ -38,6 +39,9 @@ class CategoryController extends Controller
 
         $category = Category::create(
             array_merge(
+                [
+                    'category_slug' => Str::slug($request->category_name, '-')
+                ],
                 $validator->validated()
             )
         );
@@ -55,7 +59,8 @@ class CategoryController extends Controller
         $validator = Validator::make(
             $request->all(),
             [
-                'category_name' => 'required|string|between:2,30|unique:categories',
+                'category_name' => 'required|string|between:2,30',
+                'category_icon' => 'required',
             ]
         );
 
@@ -71,6 +76,13 @@ class CategoryController extends Controller
                 $validator->validated()
             )
         );
+
+        if ($category) {
+            return response()->json([
+                'success' => true,
+                'message' => 'Category updated successfully.'
+            ], 201);
+        }
     }
     
     public function destory($id)

@@ -7,12 +7,13 @@ use Overtrue\LaravelFollow\Followable;
 use Tymon\JWTAuth\Contracts\JWTSubject;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Overtrue\LaravelFavorite\Traits\Favoriter;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable implements JWTSubject
 {
-    use HasApiTokens, HasFactory, Notifiable, Followable;
+    use HasApiTokens, HasFactory, Notifiable, Followable, Favoriter;
 
     /**
      * The attributes that are mass assignable.
@@ -22,6 +23,9 @@ class User extends Authenticatable implements JWTSubject
     protected $fillable = [
         'name',
         'email',
+        'user_name',
+        'user_bio',
+        '_picture',
         'password',
     ];
 
@@ -57,5 +61,16 @@ class User extends Authenticatable implements JWTSubject
     public function getJWTCustomClaims()
     {
         return [];
+    }
+
+    public function products()
+    {
+        return $this->hasMany(Product::class);
+    }
+
+
+    public function providers()
+    {
+        return $this->hasMany(Provider::class,'user_id','id');
     }
 }

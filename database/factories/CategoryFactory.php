@@ -24,6 +24,7 @@ class CategoryFactory extends Factory
         $name = $this->faker->text(10);
         return [
             'category_name' => $name,
+            'category_slug' => 'this_is_slug',
             'category_icon' => 'image',
             'category_image' => 'image',
         ];

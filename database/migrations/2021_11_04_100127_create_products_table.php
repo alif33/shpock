@@ -24,6 +24,12 @@ class CreateProductsTable extends Migration
             $table->bigInteger('subcategory_id')->unsigned();
             $table->bigInteger('nextcategory_id')->unsigned();
             $table->bigInteger('currency_id')->unsigned();
+            $table->string('street_number')->nullable();
+            $table->string('street_name')->nullable();
+            $table->string('town_city')->nullable();
+            $table->string('administrative_area')->nullable();
+            $table->string('postal_code')->nullable();
+            $table->string('country');
             $table->bigInteger('user_id')->unsigned();
             $table->timestamps();
             $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');

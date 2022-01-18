@@ -5,15 +5,16 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Category extends Model
+class Report extends Model
 {
     use HasFactory;
-    
-    protected $table = 'categories';
-   
+
+    protected $table = 'reports';
+
     protected $fillable = [
-        'category_name',
-        'category_slug',
-        'category_icon',
+        'report',
+        'status',
+        'user_id',
+        'product_id'
     ];
 }

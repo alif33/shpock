@@ -11,43 +11,15 @@
         "s": "php artisan serve",
         "mr": "php artisan migrate",
         "seed": "php artisan db:seed",
-        "rb": "php artisan migrate:rollback --step=15",
-        "refresh": "yarn rb && yarn mr && yarn seed",
-        "make": "php artisan make:model Currency -cfms",
-        "next": ""
+        "rb": "php artisan migrate:rollback --step=20",
+        "refresh": "yarn rb && yarn mr && yarn seed && yarn s",
+        "make": "php artisan make:model Question -cfms",
+        "clear": "php artisan cache:clear"
     },
     "devDependencies": {
-        "@babel/preset-react": "^7.14.5",
-        "axios": "^0.24.0",
+        "axios": "^0.21",
         "laravel-mix": "^6.0.6",
         "lodash": "^4.17.19",
         "postcss": "^8.1.14"
-    },
-    "dependencies": {
-        "@fortawesome/fontawesome-free-solid": "^5.0.13",
-        "@fortawesome/fontawesome-svg-core": "^1.2.36",
-        "@fortawesome/react-fontawesome": "^0.1.15",
-        "@reduxjs/toolkit": "^1.6.2",
-        "@testing-library/jest-dom": "^5.11.4",
-        "@testing-library/react": "^11.1.0",
-        "@testing-library/user-event": "^12.1.10",
-        "bootstrap": "^5.1.0",
-        "classnames": "^2.3.1",
-        "js-cookie": "^3.0.1",
-        "node-sass": "4.14.1",
-        "react": "^17.0.2",
-        "react-custom-radio-checkbox": "^1.0.2",
-        "react-dom": "^17.0.2",
-        "react-multilevel-sidebar": "^1.0.4",
-        "react-query": "^3.31.0",
-        "react-redux": "^7.2.6",
-        "react-router-dom": "^5.2.0",
-        "react-scripts": "4.0.3",
-        "react-slick": "^0.28.1",
-        "react-toastify": "^8.0.3",
-        "reactstrap": "^8.9.0",
-        "redux-persist": "^6.0.0",
-        "slick-carousel": "^1.8.1",
-        "web-vitals": "^1.0.1"
     }
 }

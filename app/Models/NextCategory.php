@@ -13,6 +13,7 @@ class NextCategory extends Model
 
     protected $fillable = [
         'nextcategory_name',
+        'nextcategory_slug',
         'nextcategory_icon',
         'category_id',
         'subcategory_id',

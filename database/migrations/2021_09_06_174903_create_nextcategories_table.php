@@ -16,6 +16,7 @@ class CreateNextcategoriesTable extends Migration
         Schema::create('nextcategories', function (Blueprint $table) {
             $table->id();
             $table->string('nextcategory_name')->unique();
+            $table->string('nextcategory_slug');
             $table->text('nextcategory_icon')->nullable();
             $table->text('nextcategory_image')->nullable();
             $table->bigInteger('category_id')->unsigned();

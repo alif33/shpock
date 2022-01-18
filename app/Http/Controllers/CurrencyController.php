@@ -24,8 +24,8 @@ class CurrencyController extends Controller
         $validator = Validator::make(
             $request->all(),
             [
-                'currency_name' => 'required|string',
-                'currency_code' => 'required|string',
+                'currency_name' => 'required|string|unique:currencies',
+                'currency_code' => 'required|string|unique:currencies',
             ]
         );
 
@@ -42,15 +42,22 @@ class CurrencyController extends Controller
             )
         );
 
-        
+        if ($currency) {
+            return response()->json([
+                'success' => true,
+                'message' => 'Currency added successfully.'
+            ], 201);
+        }
     }
 
     public function update(Request $request, $id)
     {
+
         $validator = Validator::make(
             $request->all(),
             [
-                'category_name' => 'required|string|between:2,30|unique:categories',
+                'currency_name' => 'required|string',
+                'currency_code' => 'required|string',
             ]
         );
 
@@ -61,11 +68,18 @@ class CurrencyController extends Controller
             );
         }
 
-        $category = Category::findOrFail($id)->update(
+        $currency = Currency::findOrFail($id)->update(
             array_merge(
                 $validator->validated()
             )
         );
+
+        if ($currency) {
+            return response()->json([
+                'success' => true,
+                'message' => 'Currency updated successfully.'
+            ], 200);
+        }
     }
     
     public function destory($id)

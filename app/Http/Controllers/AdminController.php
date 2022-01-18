@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Admin;
+use App\Models\Report;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
@@ -18,7 +19,6 @@ class AdminController extends Controller
     protected function guard()
     {
         return Auth::guard('admin');
-
     }
 
     protected function respondWithToken($token)
@@ -97,6 +97,9 @@ class AdminController extends Controller
 
     }
 
+    public function reports(){
+        return Report::orderBy('id', 'DESC')->get();
+    }
 
     public function logout()
     {

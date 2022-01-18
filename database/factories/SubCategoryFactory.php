@@ -25,6 +25,7 @@ class SubCategoryFactory extends Factory
         
         return [
             'subcategory_name' => $name,
+            'subcategory_slug' => 'suncategory_slug',
             'subcategory_icon' => 'image',
             'subcategory_image' => 'image',
             'category_id' => rand(1, 7)

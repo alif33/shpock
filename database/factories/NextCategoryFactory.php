@@ -25,6 +25,7 @@ class NextCategoryFactory extends Factory
 
         return [
             'nextcategory_name' => $name,
+            'nextcategory_slug' => 'nextcatrgory_slug',
             'nextcategory_icon' => 'icon',
             'nextcategory_image' => 'image',
             'category_id' => rand(1 , 10),

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\SubCategory;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
@@ -10,12 +11,12 @@ class SubCategoryController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth:admin', ['except' => ['show']]);
+        $this->middleware('auth:admin', ['except' => ['index', 'show']]);
     }
 
     public function index()
     {
-        return SubCategory::all();
+        return SubCategory::orderBy('id', 'DESC')->get();
     }
 
     public function store(Request $request)
@@ -36,11 +37,21 @@ class SubCategoryController extends Controller
             );
         }
 
-        $category = SubCategory::create(
+        $subcategory = SubCategory::create(
             array_merge(
+                [
+                    'subcategory_slug' => Str::slug($request->subcategory_name, '-')
+                ],
                 $validator->validated()
             )
         );
+
+        if ($subcategory) {
+            return response()->json([
+                'success' => true,
+                'message' => 'Sub Category created successfully.'
+            ], 201);
+        }
     }
 
     public function update(Request $request, $id)

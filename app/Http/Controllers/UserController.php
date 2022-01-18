@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
@@ -12,7 +13,7 @@ class UserController extends Controller
     
     public function __construct()
     {
-        $this->middleware('auth:user', ['except' => ['login', 'register']]);
+        $this->middleware('auth:user', ['except' => ['login', 'register', 'info']]);
 
     }
 
@@ -27,6 +28,7 @@ class UserController extends Controller
         return response()->json(   
             [   
                 'success'        => true,
+                'user'          => $this->guard()->user(),
                 'token'          => $token,
                 'token_type'     => 'bearer',
                 'token_validity' => ($this->guard()->factory()->getTTL() * 60),
@@ -85,12 +87,71 @@ class UserController extends Controller
         $user = User::create(
             array_merge(
                 $validator->validated(),
-                ['password' => bcrypt($request->password)]
+                [
+                    'user_name' => Str::slug($request->name, '_'),
+                    'password' => bcrypt($request->password)
+                ]
             )
         );
 
-        return response()->json(['message' => 'User created successfully', 'user' => $user]);
+        return response()->json([
+            'message' => 'User created successfully', 
+            'user' => $user
+        ]);
 
+    }
+
+    public function update(Request $request)
+    {   
+
+        $validator = Validator::make(
+            $request->all(),
+            [
+                'user_bio'     => 'string|between:2,250',
+                'image'    => 'mimes:png,jpg,jpeg,gif|max:2048',
+            ]
+        );
+
+        if ($validator->fails()) {
+            return response()->json(
+                [$validator->errors()],
+                422
+            );
+        }
+
+        $profile = User::findOrFail(Auth::user()->id);
+
+        if ($request
+        ->file('image') && $image_path = $request
+        ->file('image')->store('profile', 'public')) {
+            $user = $profile->update(
+                array_merge(
+                    [
+                        '_picture' => $image_path
+                    ],
+                    $validator->validated()
+                )
+            );
+    
+            if ($user) {
+                return response()->json([
+                    'message' => 'Profile updated successfully', 
+                    'user' => User::findOrFail(Auth::user()->id)->first()
+                ]);
+            }
+        }else{
+            $user = $profile->update(
+                $validator
+                ->validated()
+            );
+    
+            if ($user) {
+                return response()->json([
+                    'message' => 'Profile updated successfully', 
+                    'user' => $user
+                ]);
+            }
+        }  
     }
 
 
@@ -100,6 +161,13 @@ class UserController extends Controller
 
         return response()->json(['message' => 'User logged out successfully']);
 
+    }
+
+    public function info($id)
+    {
+      return User::where([
+            'id' => $id 
+        ])->get();
     }
 
     public function profile()
